@@ -10,7 +10,8 @@ Summary(pl):	Curses::UI - interfejs u¿ytkownika oparty na bibliotece curses
 Name:		perl-Curses-UI
 Version:	0.92
 Release:	1
-License:	GPL
+# same as perl
+License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	a7514927424a517c5c94b72dfe84b838
