@@ -37,17 +37,17 @@ bibliotekê curses.
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
-%build
-%{__perl} Makefile.PL \
-	INSTALLDIRS=vendor
-%{__make}
-
 # fails with:
 # Unable to get Terminal Size. The TIOCGWINSZ ioctl didn't work. The
 # COLUMNS and LINES environment variables didn't work. The resize
 # program didn't work.
 # Alternatively we could add BR: X11 (which sounds a bit crazy for me)
-rm -f t/13notebook.t
+mv t/13notebook.t{,.blah}
+
+%build
+%{__perl} Makefile.PL \
+	INSTALLDIRS=vendor
+%{__make}
 
 %{?with_tests:%{__make} test}
 
