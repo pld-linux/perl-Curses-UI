@@ -3,8 +3,8 @@
 %bcond_without	tests	# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
-%define	pdir	Curses
-%define	pnam	UI
+%define		pdir	Curses
+%define		pnam	UI
 Summary:	Curses::UI - a UI framework based on the curses library
 Summary(pl):	Curses::UI - interfejs u¿ytkownika oparty na bibliotece curses
 Name:		perl-Curses-UI
