@@ -9,7 +9,7 @@ Summary:	Curses::UI - a UI framework based on the curses library
 Summary(pl):	Curses::UI - interfejs u¿ytkownika oparty na bibliotece curses
 Name:		perl-Curses-UI
 Version:	0.94
-Release:	1
+Release:	2
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
@@ -49,6 +49,9 @@ install examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}/
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+# get rid of pod documentation
+rm -f $RPM_BUILD_ROOT%{perl_vendorlib}/Curses/UI/Tutorial.pod
 
 %clean
 rm -rf $RPM_BUILD_ROOT
