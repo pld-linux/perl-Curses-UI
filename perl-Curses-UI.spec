@@ -1,29 +1,33 @@
 #
 # Conditional build:
 # _without_tests - do not perform "make test"
+#
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Curses
 %define	pnam	UI
-Summary:	Curses::UI perl module
-Summary(pl):	Modu³ perla Curses::UI
-Name:		perl-%{pdir}-%{pnam}
-Version:	0.71
+Summary:	Curses::UI - a UI framework based on the curses library
+Summary(pl):	Curses::UI - interfejs u¿ytkownika oparty na bibliotece curses
+Name:		perl-Curses-UI
+Version:	0.73
 Release:	2
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-BuildRequires:	rpm-perlprov >= 4.1-13
-BuildRequires:	perl >= 5.6.1
+BuildRequires:	perl >= 5.8.0
 BuildRequires:	perl-Curses
 BuildRequires:	perl-Term-ReadKey
+BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-A UI framework based on the curses library.
+Curses::UI Perl module is a UI framework based on the curses library.
+It can be used for the development of curses based user interfaces.
 
 %description -l pl
-Modu³ ten udostêpnia UI bazuj±ce na bibliotece Curses.
+Modu³ Perla Curses::UI stanowi szkielet oparty na bibliotece curses.
+Mo¿e s³u¿yæ do konstruowania interfejsów u¿ytkownika w oparciu o
+bibliotekê curses.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
@@ -32,6 +36,7 @@ Modu³ ten udostêpnia UI bazuj±ce na bibliotece Curses.
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor 
 %{__make}
+
 %{!?_without_tests:%{__make} test}
 
 %install
