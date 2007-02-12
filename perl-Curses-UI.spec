@@ -6,7 +6,7 @@
 %define		pdir	Curses
 %define		pnam	UI
 Summary:	Curses::UI - a UI framework based on the curses library
-Summary(pl):	Curses::UI - interfejs u¿ytkownika oparty na bibliotece curses
+Summary(pl.UTF-8):   Curses::UI - interfejs uÅ¼ytkownika oparty na bibliotece curses
 Name:		perl-Curses-UI
 Version:	0.95
 Release:	1
@@ -29,10 +29,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Curses::UI Perl module is a UI framework based on the curses library.
 It can be used for the development of curses based user interfaces.
 
-%description -l pl
-Modu³ Perla Curses::UI stanowi szkielet oparty na bibliotece curses.
-Mo¿e s³u¿yæ do konstruowania interfejsów u¿ytkownika w oparciu o
-bibliotekê curses.
+%description -l pl.UTF-8
+ModuÅ‚ Perla Curses::UI stanowi szkielet oparty na bibliotece curses.
+MoÅ¼e sÅ‚uÅ¼yÄ‡ do konstruowania interfejsÃ³w uÅ¼ytkownika w oparciu o
+bibliotekÄ™ curses.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
