@@ -6,7 +6,7 @@
 %define		pdir	Curses
 %define		pnam	UI
 Summary:	Curses::UI - a UI framework based on the curses library
-Summary(pl.UTF-8):   Curses::UI - interfejs użytkownika oparty na bibliotece curses
+Summary(pl.UTF-8):	Curses::UI - interfejs użytkownika oparty na bibliotece curses
 Name:		perl-Curses-UI
 Version:	0.95
 Release:	1
