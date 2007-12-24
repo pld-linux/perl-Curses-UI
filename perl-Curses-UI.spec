@@ -8,13 +8,13 @@
 Summary:	Curses::UI - a UI framework based on the curses library
 Summary(pl.UTF-8):	Curses::UI - interfejs użytkownika oparty na bibliotece curses
 Name:		perl-Curses-UI
-Version:	0.95
+Version:	0.96
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	f1ee30de6cbba611acca785fa668d8b8
+# Source0-md5:	11f4c10d8b47f0909069aca55794203d
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	perl-Curses
 BuildRequires:	perl-Term-ReadKey
