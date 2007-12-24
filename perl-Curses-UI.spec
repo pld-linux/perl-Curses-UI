@@ -13,11 +13,12 @@ Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Curses/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	11f4c10d8b47f0909069aca55794203d
-BuildRequires:	perl-devel >= 1:5.8.0
+URL:		http://search.cpan.org/dist/Curses-UI/
 BuildRequires:	perl-Curses
 BuildRequires:	perl-Term-ReadKey
+BuildRequires:	perl-devel >= 1:5.8.0
 %if %{with tests}
 BuildRequires:	perl-Test-Pod
 %endif
