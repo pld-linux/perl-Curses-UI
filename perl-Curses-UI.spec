@@ -15,6 +15,7 @@ License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Curses/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	11f4c10d8b47f0909069aca55794203d
+Patch0:		%{name}-tests.patch
 URL:		http://search.cpan.org/dist/Curses-UI/
 BuildRequires:	perl-Curses
 BuildRequires:	perl-Term-ReadKey
@@ -37,6 +38,7 @@ bibliotekę curses.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
+%patch0 -p1
 
 # fails with:
 # Unable to get Terminal Size. The TIOCGWINSZ ioctl didn't work. The
