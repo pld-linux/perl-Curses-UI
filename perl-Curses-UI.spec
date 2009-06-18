@@ -8,22 +8,20 @@
 Summary:	Curses::UI - a UI framework based on the curses library
 Summary(pl.UTF-8):	Curses::UI - interfejs użytkownika oparty na bibliotece curses
 Name:		perl-Curses-UI
-Version:	0.96
-Release:	2
+Version:	0.9607
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Curses/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	11f4c10d8b47f0909069aca55794203d
-Patch0:		%{name}-tests.patch
+# Source0-md5:	8970c72e378aa386e0e79a884ef5863a
 URL:		http://search.cpan.org/dist/Curses-UI/
+BuildRequires:	perl-devel >= 1:5.8.0
+BuildRequires:	rpm-perlprov >= 4.1-13
+%if %{with tests}
 BuildRequires:	perl-Curses
 BuildRequires:	perl-Term-ReadKey
-BuildRequires:	perl-devel >= 1:5.8.0
-%if %{with tests}
-BuildRequires:	perl-Test-Pod
 %endif
-BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -38,14 +36,13 @@ bibliotekę curses.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
-%patch0 -p1
 
 # fails with:
 # Unable to get Terminal Size. The TIOCGWINSZ ioctl didn't work. The
 # COLUMNS and LINES environment variables didn't work. The resize
 # program didn't work.
 # Alternatively we could add BR: X11 (which sounds a bit crazy for me)
-mv t/13notebook.t{,.blah}
+#mv t/13notebook.t{,.blah)
 
 %build
 %{__perl} Makefile.PL \
@@ -57,11 +54,11 @@ mv t/13notebook.t{,.blah}
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}/
-install examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}/
-
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+cp -a examples $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 # get rid of pod documentation
 rm -f $RPM_BUILD_ROOT%{perl_vendorlib}/Curses/UI/Tutorial.pod
@@ -71,8 +68,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc Changes README TODO
-%{perl_vendorlib}/Curses/UI.pm
+%doc Changes CREDITS INSTALL README
+%{perl_vendorlib}/Curses/*.pm
 %{perl_vendorlib}/Curses/UI
 %{_mandir}/man3/*
 %dir %{_examplesdir}/%{name}-%{version}
