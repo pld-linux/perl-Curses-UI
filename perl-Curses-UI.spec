@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_without	tests	# do not perform "make test"
 #
-%include	/usr/lib/rpm/macros.perl
 %define		pdir	Curses
 %define		pnam	UI
 Summary:	Curses::UI - a UI framework based on the curses library
